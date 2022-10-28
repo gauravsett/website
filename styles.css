@@ -1,0 +1,73 @@
+:root {
+    --primary: #FFFFFF;
+    --secondary: #000000;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    margin: 0;
+    font-family: "Archivo";
+    font-size: 16px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    min-height: 100vh;
+}
+
+main {
+    width: 420px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 16px 0 0 0;
+}
+
+p {
+    font-weight: 400;
+    margin: 16px 0;
+}
+
+ul {
+    margin: 4px 0;
+    padding: 0 0 0 20px;
+    list-style-type: none;
+}
+ul > li:before {
+    content: "–"; /* en dash */
+    position: absolute;
+    margin-left: -16px; 
+}
+
+a {
+    color: var(--secondary);
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+      --primary: #000000;
+      --secondary: #FFFFFF;
+    }
+  
+    img {
+      /* filter: invert(1); */
+    }
+}
