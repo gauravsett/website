@@ -63,8 +63,4 @@ img {
       --primary: #000000;
       --secondary: #FFFFFF;
     }
-  
-    img {
-      /* filter: invert(1); */
-    }
 }
