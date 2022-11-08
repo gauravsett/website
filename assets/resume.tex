@@ -19,7 +19,6 @@
 \setlist[itemize]{noitemsep,topsep=2pt,label={\tiny\raisebox{2pt}{\textbullet}}}
 
 \newcommand{\resumeHeading}[1]{
-    % \vspace*{5pt}
     \subsection*{#1}
     \hrule
     \vspace*{5pt}
@@ -30,6 +29,12 @@
 }
 \newcommand{\resumeListHeading}[1]{\vspace*{5pt}\textbf{#1}}
 
+\newcommand{\resumeProject}[2]{
+    \resumeListHeading{#1}
+    \begin{itemize*}[label=$|$]
+        \item #2
+    \end{itemize*}
+}
 
 \begin{document}
 
@@ -159,8 +164,8 @@
     {Atlanta, GA}
     {Aug 2021 to Present}
 \begin{itemize}
-    \item Managing seminar programs for 120 students; led seminar groups on high-impact careers and philanthropy
-    \item Secured grant funding, organized events, and led outreach to become one of the largest university chapters in the world
+    \item Managed seminar programs for 120 students; led seminar groups on high-impact careers and philanthropy
+    \item Secured grant funding, organized events, and led outreach to become one of the world's largest university chapters
 \end{itemize}
 
 \resumeSubHeading
@@ -216,28 +221,56 @@
 %     \item Led literature review on how social media amplifies misinformation and polarization in public discourse
 % \end{itemize}
 
-\resumeSubHeading
-    {Master's Project}
-    {Georgia Tech College of Computing}
-    {Atlanta, GA}
-    {Jan 2023 to Aug 2023}
-\begin{itemize}
-    \item Developing course on AI safety built on wiki platform, fostering student collaboration, engagement, and community
-\end{itemize}
+% \resumeSubHeading
+%     {Master's Project}
+%     {Georgia Tech College of Computing}
+%     {Atlanta, GA}
+%     {Jan 2023 to Aug 2023}
+% \begin{itemize}
+%     \item Developing course on AI safety built on wiki platform, fostering student collaboration, engagement, and community
+% \end{itemize}
 
-\resumeSubHeading
-    {Undergraduate Research}
-    {Georgia Tech College of Computing}
-    {Atlanta, GA}
-    {Aug 2019 to Dec 2022}
-\begin{itemize}
-    \item Measured for capacity of large language models to rationalize immoral decisions analyzing scale and training tasks
-    \item Built transformer model for spatiotemporal forecasting of Atlanta gentrification using PyTorch
-    \item Developed metric for importance of news stories based on topic similarity across outlets using BERT
-    \item Wrote literature review on the likely effects of AI on wages and employment over the coming century
-    \item Analyzed investment portfolios to predict returns based on asset diversity using time-series K-means clustering
-    \item Conducted literature review on how social media amplifies misinformation and polarization in public discourse
-\end{itemize}
+% \resumeSubHeading
+%     {Undergraduate Research}
+%     {Georgia Tech College of Computing}
+%     {Atlanta, GA}
+%     {Aug 2019 to Dec 2022}
+% \begin{itemize}
+%     \item Measured for capacity of large language models to rationalize immoral decisions analyzing scale and training tasks
+%     \item Built transformer model for spatiotemporal forecasting of Atlanta gentrification using PyTorch
+%     \item Developed metric for importance of news stories based on topic similarity across outlets using BERT
+%     \item Wrote literature review on the likely effects of AI on wages and employment over the coming century
+%     \item Analyzed investment portfolios to predict returns based on asset diversity using time-series K-means clustering
+%     \item Conducted literature review on how social media amplifies misinformation and polarization in public discourse
+% \end{itemize}
 
+
+\resumeProject{AI Safety Course}{
+    Developing course built on wiki platform, fostering student collaboration, engagement, and community
+}
+
+\resumeProject{Gentrification Forecasting}{
+    Built transformer model forecasting of Atlanta gentrification with tax data using PyTorch
+}
+
+\resumeProject{Language Model Review}{
+    Wrote literature review on the potential for language models to act as domain experts
+}
+
+\resumeProject{News Classification}{
+    Developed metric for importance of news stories based on topic similarity across outlets using BERT
+}
+
+\resumeProject{Employment Review}{
+    Wrote literature review on the likely effects of AI on wages and employment over this century
+}
+
+\resumeProject{Portfolio Clustering}{
+    Analyzed investment portfolios to identify clusters with asset price time-series using K-means
+}
+
+\resumeProject{Social Media Review}{
+    Wrote literature review how social media affects misinformation, polarization, and radicalization
+}
 
 \end{document}
