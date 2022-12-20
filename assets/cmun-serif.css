@@ -9,7 +9,6 @@
 	font-style: normal;
 }
 
-
 @font-face {
 	font-family: 'Computer Modern Serif';
 	src: url('cmunbx.eot');
@@ -20,7 +19,6 @@
 	font-weight: bold;
 	font-style: normal;
 }
-
 
 @font-face {
 	font-family: 'Computer Modern Serif';
@@ -33,7 +31,6 @@
 	font-style: italic;
 }
 
-
 @font-face {
 	font-family: 'Computer Modern Serif';
 	src: url('cmunbi.eot');
@@ -44,5 +41,3 @@
 	font-weight: bold;
 	font-style: italic;
 }
-
-
