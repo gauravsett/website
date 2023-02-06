@@ -1,14 +1,15 @@
 :root {
     --primary: #FFFFFF;
     --secondary: #000000;
-    --tertiary: #0000FF;
+    --blue: #0000FF;
+    --red: #FF0000;
   }
 
 body {
     top: 0;
     margin: 0;
-    font-family: 'Computer Modern Serif', serif;
-    font-size: 18px;
+    font-family: "Computer Modern Serif";
+    font-size: 16px;
     background-color: var(--primary);
     color: var(--secondary);
 }
@@ -17,50 +18,63 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 400px;
+    max-width: 600px;
     height: 100%;
-    min-height: 90vh;
+    min-height: 80vh;
     margin: 0 auto;
-    padding: 5vh 20px;
-}
-
-h1 {
-    font-size: 24px;
-    font-weight: 700;
-    margin: 16px 0 0 0;
-}
-
-p {
-    font-weight: 400;
-    margin: 8px 0;
-}
-p.highlight {
-    font-style: italic;
-}
-
-ul {
-    margin: 16px 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-li {
-    margin: 4px 0;
-}
-
-a {
-    color: var(--secondary);
-}
-a:hover {
-    color: var(--tertiary);
-    text-decoration: underline;
+    padding: 10vh 20px;
 }
 
 img {
     width: 80px;
     height: 80px;
+    margin: 0 0 24px 0;
     border-radius: 4px;
     border: 1px solid var(--secondary);
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}    
+
+h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 8px 0 0 0;
+}
+
+p {
+    font-weight: 400;
+    margin: 8px 0;
+}    
+
+ul {
+    margin: 8px 0;
+    padding: 0 0 0 24px;
+    list-style: square;
+}    
+
+li:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+a {
+    color: var(--blue);
+    font-weight: 500;
+}    
+p a {
+    color: var(--secondary);
+    font-weight: 400;
+}    
+
+a:hover {
+    font-weight: 500;
+}
+
+ul.timeline a {
+    font-style: italic;
 }
 
 /* @media (prefers-color-scheme: dark) {
