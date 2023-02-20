@@ -1,0 +1,126 @@
+:root {
+    --one: #FFF;
+    --two: #000;
+    --three: #DDD;
+    --four: #999;
+    --blue: #0000FF;
+    --red: #ff3c04;
+  }
+
+body {
+    top: 0;
+    margin: 0;
+    font-family: "IBM Plex Sans";
+    font-size: 16px;
+    background-color: var(--one);
+    color: var(--two);
+}
+
+header {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header img {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1px solid var(--two);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+nav {
+    width: 100%;
+    border-top: 1px solid var(--three);
+    border-bottom: 1px solid var(--three);
+}
+
+nav div {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+a {
+    color: var(--four);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--two);
+    font-weight: 600;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin: 20px 0;
+}
+
+section h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 8px 0 8px 0;
+}
+
+section h2 {
+    margin: 16px 0 8px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+section h3 {
+    margin: 16px 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+section p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+section ul {
+    margin: 8px 0;
+    padding: 0 0 0 24px;
+    list-style-type: square;
+}
+
+ul ul {
+    margin: inherit;
+}
+
+section li {
+    margin: 4px 0;
+}
+
+span {
+    font-weight: 500;
+}
+
+/* Dark Mode */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+      --one: #111;
+      --two: #FFF;
+      --three: #222;
+      --four: #AAA;
+    }
+}
