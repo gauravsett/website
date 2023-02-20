@@ -3,8 +3,8 @@
     --two: #000;
     --three: #DDD;
     --four: #888;
-    --blue: #0000FF;
-    --red: #ff3c04;
+    --blue: #5555FF;
+    --red: #FF0000;
   }
 
 body {
@@ -35,7 +35,7 @@ header img {
 header h1 {
     margin: 0;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 nav {
@@ -52,15 +52,8 @@ nav div {
     gap: 20px;
 }
 
-a {
-    color: var(--four);
-    text-decoration: none;
-    font-weight: 500;
-}
-
 a:hover {
-    color: var(--two);
-    font-weight: 600;
+    text-decoration: underline;
 }
 
 main {
@@ -110,6 +103,12 @@ section li {
     margin: 4px 0;
 }
 
+a {
+    color: var(--blue);
+    font-weight: 500;
+    text-decoration: none;
+}
+
 span {
     font-weight: 500;
 }
@@ -121,6 +120,6 @@ span {
       --one: #111;
       --two: #FFF;
       --three: #222;
-      --four: #AAA;
+      --blue: #AAAAFF;
     }
 }
