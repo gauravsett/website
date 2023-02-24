@@ -1,6 +1,6 @@
 ---
+title: About
 layout: default
-title: About Me
 ---
 
 # About Me
@@ -14,11 +14,11 @@ Hello! My name is Gaurav. I am a student at Georgia Tech interested in AI alignm
 ### Present
 - Completing my coursework for my MS in Computer Science at Georgia Tech.
 - Acting as the director of the AI Safety Initiative at Georgia Tech.
-- Beginning my graduate thesis on cooperative language models.
+- Beginning my graduate thesis on pragmatics for language model alignment.
 - Working as a graduate teaching assistant for Cognitive Science course.
 
 ### Summer
-- Complete my graduate thesis in cooperative language models.
+- Complete my graduate thesis on pragmatics for language model alignment.
 - Graduate from Georgia Tech.
 - Take a break, travel, and spend time with friends.
 - [Considering part-time work in AI safety!](/contact)
