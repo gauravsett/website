@@ -10,7 +10,7 @@
 body {
     top: 0;
     margin: 0;
-    font-family: "IBM Plex Sans";
+    font-family: "IBM Plex Sans", --apple-system, sans-serif;
     font-size: 16px;
     background-color: var(--background);
     color: var(--text);
