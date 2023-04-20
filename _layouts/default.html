@@ -16,10 +16,16 @@
     <main>
       {% assign blog = site.pages | where: "permalink", "/blog.html" | first %}
       {% assign about = site.pages | where: "permalink", "/index.html" | first %}
+      {% assign latest_date = about.last_modified_at %}
+      {% for page in site.pages %}
+        {% if latest_date < page.last_modified_at %}
+          {% assign latest_date = page.last_modified_at %}
+        {% endif %}
+      {% endfor %}
       <section class="directory">
         <div class="header">
           <a href="/">Gaurav Sett</a>
-          <span>{{ about.last_modified_at }}</span>
+          <span>{{ latest_date }}</span>
         </div>
         <div class="row">
           <img src="/assets/file.svg"></img>

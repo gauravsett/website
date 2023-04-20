@@ -7,7 +7,7 @@ last_modified_at: 2023-04-20
 
 # About Me
 
-Hello! My name is Gaurav. I am a student at Georgia Tech and the director of our [AI Safety Initiative](https://aisi.dev){:target="_blank"}. 
+Hello! My name is Gaurav. I am a master's student at Georgia Tech and the director of our [AI Safety Initiative](https://aisi.dev){:target="_blank"}. 
 
 ## Timeline
 
