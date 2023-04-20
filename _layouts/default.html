@@ -1,38 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="shortcut icon" href="/assets/profile.png" />
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/assets/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }} | Gaurav Sett</title>
+  </head>
 
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="shortcut icon" href="/assets/favicon.png" />
-  <link rel="icon" sizes="16x16 32x32 64x64" href="/assets/favicon.png" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} | Gaurav Sett</title>
-</head>
+  <body>
+    <main>
+      {% assign blog = site.pages | where: "permalink", "/blog.html" | first %}
+      {% assign about = site.pages | where: "permalink", "/index.html" | first %}
+      <section class="directory">
+        <div class="header">
+          <a href="/">Gaurav Sett</a>
+          <span>{{ about.last_modified_at }}</span>
+        </div>
+        <div class="row">
+          <img src="/assets/file.svg"></img>
+          <a href="/">{{ about.title }}</a>
+          <span>{{ about.last_modified_at }}</span>
+        </div>
+        <div class="row">
+          <img src="/assets/folder.svg" />
+          <a href="/blog">{{ blog.title }}</a>
+          <span>{{ blog.last_modified_at }}</span>
+        </div>
+      </section>
 
-<body>
-  <header>
-    <img src="/assets/profile.png">
-    <h1>Gaurav Sett</h1>
-  </header>
-  <nav>
-    <div>
-      <a href="/" class="active">About</a>
-      <!-- <a href="/blog">Blog</a> -->
-      <a href="/contact">Contact</a>
-    </div>
-  </nav>
-  <main>
-    <section>
-      <span>{{ page.date | date: "%Y-%m-%d" }}</span>
-      {{ content }}
-    </section>
-  </main>
-</body>
-
+      <section class="file">
+        <div class="header">
+          <a href={{ page.permalink }}>{{ page.title }}</a>
+          <span>{{ page.last_modified_at }}</span>
+        </div>
+        <div class="content">{{ content }}</div>
+      </section>
+    </main>
+  </body>
 </html>

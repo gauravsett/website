@@ -1,10 +1,10 @@
 :root {
-    --one: #FFF;
-    --two: #000;
-    --three: #DDD;
-    --four: #F0F0FF;
-    --blue: #5555FF;
-    --red: #FF0000;
+    --background: #FFF;
+    --text: #000;
+    --highlight: #EEE;
+    --outline: #DDD;
+    --light: #777;
+    --blue: #AAAAFF;
   }
 
 body {
@@ -12,116 +12,130 @@ body {
     margin: 0;
     font-family: "IBM Plex Sans";
     font-size: 16px;
-    background-color: var(--one);
-    color: var(--two);
-}
-
-header {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-header img {
-    width: 18px;
-    height: 18px;
-    border-radius: 4px;
-    border: 1px solid var(--two);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 700;
-}
-
-nav {
-    width: 100%;
-    border-top: 1px solid var(--three);
-    border-bottom: 1px solid var(--three);
-    background-color: var(--four);
-}
-
-nav div {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-}
-
-a:hover {
-    text-decoration: underline;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 main {
+    width: calc(100% - 20px);
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
 }
 
 section {
-    margin: 20px 0;
+    margin: 40px 0;
+    border: 2px solid var(--outline);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-section h1 {
-    font-size: 24px;
+section div {
+    padding: 20px;
+}
+
+section div.header {
+    background-color: var(--highlight);
+}
+
+section div.header, section div.row {
+    display: flex;
+    flex-direction: row;
+}
+
+section div.row img {
+    width: 20px;
+    height: 20px;
+    color: var(--light);
+}
+
+section div.row svg {
+    width: 20px;
+    height: 20px;
+    color: var(--light);
+}
+
+section div.header a, section div.row a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+section div.row a {
+    margin-left: 10px;
+}
+
+section div span {
+    align-content: flex-end;
+    margin-left: auto;
+    font-family: "IBM Plex Sans Condensed";
+    color: var(--light);
+}
+
+section div.row, section div.content {
+    border-top: 2px solid var(--outline);
+}
+
+section div.header a {
     font-weight: 600;
-    margin: 8px 0 8px 0;
-}
-
-section h2 {
-    margin: 16px 0 8px 0;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-section h3 {
-    margin: 16px 0 8px 0;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-section p {
-    margin: 8px 0;
-    font-size: 16px;
-}
-
-section ul {
-    margin: 8px 0;
-    padding: 0 0 0 24px;
-    list-style-type: square;
-}
-
-ul ul {
-    margin: inherit;
-}
-
-section li {
-    margin: 4px 0;
-}
-
-a {
-    color: var(--blue);
-    font-weight: 500;
     text-decoration: none;
 }
 
-span {
-    font-weight: 500;
+section div.content {
+    padding: 30px;
+}
+
+section div.content h1, section div.content h2, section div.content h3 {
+    font-weight: 600;
+}
+
+section div.content h1 {
+    font-size: 24px;
+    margin: 0 0 24px 0;
+}
+
+section div.content h2 {
+    font-size: 20px;
+    margin: 24px 0 16px 0;
+}
+
+section div.content h3 {
+    font-size: 16px;
+    margin: 20px 0 0 0;
+}
+
+section div.content p {
+    margin: 8px 0;
+}
+
+section div.content ul, section div.content ol {
+    margin: 8px 0 4px 0;
+    padding: 0 0 0 24px;
+}
+
+section div.content li {
+    margin: 4px 0;
+}
+
+section div.content a {
+    color: var(--light);
+}
+
+a:hover {
+    text-decoration: underline !important;
 }
 
 /* Dark Mode */
 
 @media (prefers-color-scheme: dark) {
     :root {
-      --one: #111;
-      --two: #FFF;
-      --three: #222;
-      --four: #000;
+      --background: #222;
+      --text: #FFF;
+      --highlight: #333;
+      --outline: #444;
+      --light: #BBB;
       --blue: #AAAAFF;
+    }
+
+    section div.row img {
+        filter: invert(100%);
     }
 }

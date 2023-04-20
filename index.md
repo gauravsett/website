@@ -1,27 +1,31 @@
 ---
 title: About
+permalink: /index.html
 layout: default
+last_modified_at: 2023-04-20
 ---
 
 # About Me
 
-Hello! My name is Gaurav. I am a student at Georgia Tech interested in AI alignment and governance. Below is a timeline of my past, present, and future.
+Hello! My name is Gaurav. I am a student at Georgia Tech and the director of our [AI Safety Initiative](https://aisi.dev){:target="_blank"}. 
+
+## Timeline
+
+Below is a timeline of my past, present, and future.
 
 ### Past
-- [resume.pdf](/assets/resume.pdf){:target="_blank"}
-- [linkedin.com/in/gauravsett](https://www.linkedin.com/in/gauravsett/){:target="_blank"}
+- [resume.pdf](/assets/resume.pdf){:target="_blank"}.
+- [linkedin.com/in/gauravsett](https://www.linkedin.com/in/gauravsett/){:target="_blank"}.
 
 ### Present
-- Completing my coursework for my MS in Computer Science at Georgia Tech.
-- Acting as the director of the AI Safety Initiative at Georgia Tech.
-- Beginning my graduate thesis on pragmatics for language model alignment.
-- Working as a graduate teaching assistant for Cognitive Science course.
+- Completing my master’s thesis on reward modeling from citation networks.
+- Running a research program for the [AI Safety Initiative](https://aisi.dev){:target="_blank"} in collaboration with [EleutherAI](https://eleuther.ai){:target="_blank"}.
 
-### Summer
-- Complete my graduate thesis on pragmatics for language model alignment.
-- Graduate from Georgia Tech.
-- Take a break, travel, and spend time with friends.
-- [Considering part-time work in AI safety!](/contact)
+### Future
+- Seeking full-time work to start in September!
 
-### Fall
-- [Seeking full-time work in AI safety!](/contact)
+## Contact
+
+Feel free to reach out at <u>mail[at]gauravsett[dot]com</u>, especially if you are:
+- Looking to hire for work in AI safety, alignment, or governance,
+- Interested in learning more about or collaborating with the [AI Safety Initiative at Georiga Tech](https://aisi.dev){:target="_blank"}.
