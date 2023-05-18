@@ -11,7 +11,7 @@ body {
     top: 0;
     margin: 0;
     font-family: "IBM Plex Sans", --apple-system, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     background-color: var(--background);
     color: var(--text);
 }
@@ -30,10 +30,10 @@ section {
 }
 
 section div {
-    padding: 20px;
+    padding: 16px;
 }
 
-section div.header {
+section.directory div.header {
     background-color: var(--highlight);
 }
 
@@ -43,15 +43,8 @@ section div.header, section div.row {
 }
 
 section div.row img {
-    width: 20px;
-    height: 20px;
-    color: var(--light);
-}
-
-section div.row svg {
-    width: 20px;
-    height: 20px;
-    color: var(--light);
+    width: 18px;
+    height: 18px;
 }
 
 section div.header a, section div.row a {
@@ -66,7 +59,6 @@ section div.row a {
 section div span {
     align-content: flex-end;
     margin-left: auto;
-    font-family: "IBM Plex Sans Condensed";
     color: var(--light);
 }
 
@@ -80,7 +72,7 @@ section div.header a {
 }
 
 section div.content {
-    padding: 30px;
+    padding: 32px;
 }
 
 section div.content h1, section div.content h2, section div.content h3 {
@@ -103,10 +95,12 @@ section div.content h3 {
 }
 
 section div.content p {
+    font-size: 16px;
     margin: 8px 0;
 }
 
 section div.content ul, section div.content ol {
+    font-size: 16px;
     margin: 8px 0 4px 0;
     padding: 0 0 0 24px;
 }
@@ -127,11 +121,11 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
     :root {
-      --background: #222;
-      --text: #FFF;
-      --highlight: #333;
-      --outline: #444;
-      --light: #BBB;
+      --background: #22272E;
+      --text: #ACBAC7;
+      --highlight: #2D333B;
+      --outline: #434C56;
+      --light: #768390;
       --blue: #AAAAFF;
     }
 
