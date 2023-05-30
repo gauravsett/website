@@ -3,7 +3,7 @@
     --text: #000;
     --highlight: #EEE;
     --outline: #DDD;
-    --light: #777;
+    --light: #AAA;
     --blue: #AAAAFF;
   }
 
@@ -33,7 +33,7 @@ section div {
     padding: 16px;
 }
 
-section.directory div.header {
+div.header {
     background-color: var(--highlight);
 }
 
@@ -120,14 +120,23 @@ a:hover {
 /* Dark Mode */
 
 @media (prefers-color-scheme: dark) {
-    :root {
+    /* :root {
       --background: #22272E;
       --text: #ACBAC7;
       --highlight: #2D333B;
       --outline: #434C56;
       --light: #768390;
       --blue: #AAAAFF;
-    }
+    } */
+
+    :root {
+        --background: #000;
+        --text: #FFF;
+        --highlight: #111;
+        --outline: #222;
+        --light: #AAA;
+        --blue: #AAAAFF;
+      }
 
     section div.row img {
         filter: invert(100%);
