@@ -3,7 +3,7 @@
     --text: #000;
     --highlight: #EEE;
     --outline: #DDD;
-    --light: #AAA;
+    --light: #777;
     --blue: #AAAAFF;
   }
 
@@ -13,6 +13,7 @@ body {
     font-family: "IBM Plex Sans", --apple-system, sans-serif;
     font-size: 14px;
     background-color: var(--background);
+    background-size: 50vw;
     color: var(--text);
 }
 
@@ -24,6 +25,7 @@ main {
 
 section {
     margin: 40px 0;
+    background-color: var(--background);
     border: 2px solid var(--outline);
     border-radius: 10px;
     overflow: hidden;
@@ -96,7 +98,7 @@ section div.content h3 {
 
 section div.content p {
     font-size: 16px;
-    margin: 8px 0;
+    margin: 16px 0;
 }
 
 section div.content ul, section div.content ol {
@@ -136,7 +138,7 @@ a:hover {
         --outline: #222;
         --light: #AAA;
         --blue: #AAAAFF;
-      }
+    }
 
     section div.row img {
         filter: invert(100%);
