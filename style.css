@@ -19,12 +19,17 @@ body {
 
 main {
     width: calc(100% - 20px);
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid var(--outline);
+    border-radius: 20px;
 }
 
 section {
-    margin: 40px 0;
     background-color: var(--background);
     border: 2px solid var(--outline);
     border-radius: 10px;
@@ -98,7 +103,8 @@ section div.content h3 {
 
 section div.content p {
     font-size: 16px;
-    margin: 16px 0;
+    margin: 16px 0 0 0;
+    line-height: 1.4;
 }
 
 section div.content ul, section div.content ol {
@@ -108,7 +114,7 @@ section div.content ul, section div.content ol {
 }
 
 section div.content li {
-    margin: 4px 0;
+    margin: 4px 0 0 0;
 }
 
 section div.content a {
@@ -132,10 +138,10 @@ a:hover {
     } */
 
     :root {
-        --background: #000;
+        --background: #111;
         --text: #FFF;
-        --highlight: #111;
-        --outline: #222;
+        --highlight: #222;
+        --outline: #333;
         --light: #AAA;
         --blue: #AAAAFF;
     }
