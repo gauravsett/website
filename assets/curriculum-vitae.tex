@@ -1,5 +1,5 @@
 
-\documentclass[10pt]{article}
+\documentclass{article}
 \usepackage[english]{babel}
 \usepackage[letterpaper, top=0.5in, right=0.5in, bottom=0.5in, left=0.5in]{geometry}
 \usepackage{amsmath}
@@ -32,7 +32,7 @@
     \textsl{#1 \hfill #2}
 }
 
-\newcommand{\resumeListHeading}[1]{\vspace*{5pt}\textbf{#1}}
+\newcommand{\headingList}[1]{\vspace*{5pt}\textbf{#1}}
 
 
 \begin{document}
@@ -40,7 +40,19 @@
 
 \section*{Gaurav Sett}
 
-—
+\textbf{Contact}
+\begin{itemize*}[label=$|$]
+    \item \href{mailto:gauravsett@icloud.com}{gauravsett@icloud.com}
+    \item \href{https://linkedin.com/in/gauravsett}{linkedin.com/in/gauravsett}
+    \item \href{https://gauravsett.com}{gauravsett.com}
+\end{itemize*}
+
+
+
+% \headingOne{Objective}
+% \vspace*{5pt}
+% Pursuing career in AI governance to address emergent risks from advanced systems. Seeking opportunities to apply technical experience in support of policy, coordination, and strategy efforts.
+
 
 
 \headingOne{Education}
@@ -48,245 +60,168 @@
 
 \headingTwo{Georgia Institute of Technology}{Atlanta, GA}
 
-\headingThree{Master of Science in Computer Science}{2023-01 to 2023-08}
+\headingThree{Master of Science in Computer Science (4.0 GPA)}{2023-01 to 2023-08}
 \begin{itemize}
-    \item 4.0 cumulative GPA
-    \item Machine Learning specialization
+    \item Machine Learning Specialization | Courses in Deep Learning, Natural Language Processing, Advanced Algorithms
 \end{itemize}
 
-\headingThree{Bachelor of Science in Computer Science}{2019-08 to 2022-12}
 
-3.9 GPA, Honors Program; Artificial Intelligence and Human-Computer Interaction threads
+\headingTwo{Georgia Institute of Technology}{Atlanta, GA}
+
+\headingThree{Bachelor of Science in Computer Science (3.9 GPA)}{2019-08 to 2022-12}
+\begin{itemize}
+    \item Artificial Intelligence Thread | Took courses in Machine Learning, Artificial Intelligence, Automata and Complexity
+    \item Human-Computer Interaction Thread | Took courses in Cognitive Science, Social Psychology, Educational Technology
+    \item Honors Program Student | Awarded distinction in research by completion of undergraduate thesis
+\end{itemize}
 
 
-\headingOne{Experience}
+
+\headingOne{Work}
 
 
-\headingTwo{College of Computing at Georgia Tech}{Atlanta, GA}
+\headingTwo{Center for AI Safety}{San Francisco, CA}
 
-\headingThree{Graduate Researcher}{2023-01 to Present}
-
-\headingThree{Graduate Teaching Assistant}{2023-01 to 2023-06}
+\headingThree{Fundraising Contractor}{2023-09 to Present}
+\begin{itemize}
+    \item Conducting donor research and analysis to identify potential supporters for leading AI safety non-profit
+\end{itemize}
 
 
 \headingTwo{Washington Post}{Washington, DC}
 
 \headingThree{Data Science Intern}{2022-05 to 2022-08}
-
-
-\headingTwo{College of Computing at Georgia Tech}{Atlanta, GA}
-
-\headingThree{Undergraduate Researcher}{2021-01 to 2022-05}
+\begin{itemize}
+    \item Categorized article topics in breaking news stream with LSTM and BERT models using PyTorch
+    \item Created API to handle continuous collection, processing, and storage of articles using AWS ECS, Lambda, and S3
+    \item Visualized breaking news topics and API performance on dashboard for journalists using Datadog
+\end{itemize}
 
 
 \headingTwo{Federal Reserve Board}{Washington, DC}
 
 \headingThree{Economics Research Intern}{2021-05 to 2021-08}
+\begin{itemize}
+    \item Developed text analysis tool regularly used in policy meetings to analyze corporate earnings calls using SpaCy
+    \item Automated collection, processing, and storage of 200K documents; used parallelization to improve speed 8x with Dask
+    \item Presented to economists on NLP techniques such as word vectors and LDA topic modeling with interactive Django app
+\end{itemize}
 
 
 \headingTwo{Georgia Tech Research Institute}{Atlanta, GA}
 
 \headingThree{Undergraduate Research Intern}{2020-05 to 2020-12}
-
-
-\headingTwo{Internet Governance Project}{Atlanta, GA}
-
-\headingThree{Undergraduate Researcher}{2019-10 to 2020-05}
-
-
-\headingTwo{Conferences}{}
 \begin{itemize}
-    \item  OASIS
-    \item NSF AI Institute
-    \item IEEE Ethics Confernece
+    \item Created classification models identifying conspiratorial anti-vax Reddit comments with 80\% accuracy using SciKit-Learn
+    \item Analyzed the partisan differences in tweets about COVID-19 topics from members of Congress using SpaCy
+    \item Built GUI application enabling social scientists to collect and analyze Twitter API data using PyQT5
 \end{itemize}
 
-\headingTwo{Workshops}{}
+
+\headingOne{Leadership}
+
+
+\headingTwo{Supervised Program for Alignment Research}{Remote}
+
+\headingThree{Founder \& Program Manager}{2023-07 to Present}
 \begin{itemize}
-    \item OASIS
-    \item NSF AI Institute
-    \item Stanford Existential Risks Conference
-    \item AI Safety Workshop Berkeley
-    \item AI Safety Organizers in DC
-    \item Civitas policy workshop in DC
+    \item Launched program facilitating AI safety research projects for 15 advisors and 80 students at 12 universities
+    \item Recruiting participants, managing applications, and organizing 18 projects in alignment, engineering, and policy
 \end{itemize}
 
-% \textbf{Contact}
-% \begin{itemize*}[label=$|$]
-%     \item \href{mailto:mail@gauravsett.com}{mail@gauravsett.com}
-%     \item \href{https://linkedin.com/in/gauravsett}{linkedin.com/in/gauravsett}
-%     \item \href{https://gauravsett.com}{gauravsett.com}
-% \end{itemize*}
+
+\headingTwo{AI Safety Initiative at Georgia Tech}{Atlanta, GA}
+
+\headingThree{Founder \& Managing Director}{2022-08 to Present}
+\begin{itemize}
+    \item Founded group hosting events, seminars, bootcamps, and research projects in AI alignment and governance
+    \item Managing programs for dozens of students, leading team operations, and supporting career transitions
+    \item Open Philanthropy University Organizer Fellowship | Awarded \$7,100 grant to support work as group organizer
+    \item Open Philanthropy Group Support Grant | Secured \$5,000 grant to support research and education programs
+\end{itemize}
 
 
-% % EDUCATION
+% \headingTwo{Effective Altruism at Georgia Tech}{Atlanta, GA}
 
-% \resumeHeading{Education}
-
-% \resumeSubHeading
-%     {MS in Computer Science}
-%     {Georgia Institute of Technology}
-%     {Atlanta, GA}
-%     {2023-01}
-%     {2023-08}
-% \begin{itemize}
-%     \item 4.0 GPA;\: 
-%         Machine Learning specialization
-% \end{itemize}
-
-% \resumeSubHeading
-%     {BS in Computer Science}
-%     {Georgia Institute of Technology}
-%     {Atlanta, GA}
-%     {2019-08}
-%     {2022-12}
-% \begin{itemize}
-%     \item 3.9 GPA, Honors Program;\: 
-%         Artificial Intelligence and Human-Computer Interaction threads
-% \end{itemize}
-
-
-% % SKILLS
-
-% \resumeHeading{Skills}
-
-% \resumeListHeading{Machine Learning}
-% \begin{itemize*}[label=$|$]
-%     \item Python
-%     \item R
-%     \item SQL
-%     \item PyTorch
-%     \item TensorFlow
-%     \item HuggingFace
-%     \item SciKit-Learn
-%     \item Pandas
-%     \item Numpy
-%     \item Matplotlib
-% \end{itemize*}
-
-% \resumeListHeading{Software Engineering}
-% \begin{itemize*}[label=$|$]
-%     \item Java
-%     \item C
-%     \item JavaScript 
-%     \item HTML/CSS 
-%     \item Git
-%     \item APIs
-%     \item AWS
-%     \item React
-%     \item Django
-%     \item Agile
-% \end{itemize*}
-
-
-% % EXPERIENCE
-
-% \resumeHeading{Experience \vspace{-2.5pt}}
-
-% \resumeSubHeading
-%     {Founder \& Director}
-%     {AI Safety Initiative at Georgia Tech}
-%     {Atlanta, GA}
-%     {2022-08}
-%     {Present}
-%     \begin{itemize}
-%         \item Managing weekly events, seminar programs, machine learning bootcamp, and campus engagement for over 50 students
-%         \item Directing a supervised research program in collaboration with EleutherAI to enable students to work on alignment
-% \end{itemize}
-
-% \resumeSubHeading
-%     {Graduate Teaching Assistant}
-%     {Georgia Tech College of Computing}
-%     {Atlanta, GA}
-%     {2023-01}
-%     {2023-06}
-% \begin{itemize}
-%     \item Planned instruction, lead discussions, and graded essays for section of 30 students in Introduction to Cognitive Science
-% \end{itemize}
-
-% \resumeSubHeading
-%     {Data Science Intern}
-%     {Washington Post}
-%     {Washington, DC}
-%     {2022-05}
-%     {2022-08}
-% \begin{itemize}
-%     \item Categorized article topics in breaking news stream with LSTM and BERT models using PyTorch
-%     \item Created API to handle continuous collection, processing, and storage of articles using AWS ECS, Lambda, and S3
-%     \item Visualized breaking news topics and API performance on dashboard for journalists using Datadog
-% \end{itemize}
-
-% \resumeSubHeading
-%     {Economics Research Intern}
-%     {Federal Reserve Board}
-%     {Washington, DC}
-%     {2021-05}
-%     {2021-08}
-% \begin{itemize}
-%     \item Developed text analysis tool regularly used in policy meetings to analyze corporate earnings calls using SpaCy
-%     \item Automated collection, processing, and storage of 200K documents; used parallelization to improve speed 8x with Dask
-%     \item Presented to economists on NLP techniques such as word vectors and LDA topic modeling with interactive Django app
-% \end{itemize}
-
-% \resumeSubHeading
-%     {Research Intern}
-%     {Georgia Tech Research Institute}
-%     {Atlanta, GA}
-%     {2020-05}
-%     {2020-12}
-% \begin{itemize}
-%     \item Created classification models identifying conspiratorial anti-vax Reddit comments with 80\% accuracy using SciKit-Learn
-%     \item Analyzed the partisan differences in tweets about COVID-19 topics from members of Congress using SpaCy
-%     \item Built GUI application enabling social scientists to collect and analyze Twitter API data using PyQT5
-% \end{itemize}
-
-
-% % PROJECTS
-
-% \resumeHeading{Projects \vspace{-2.5pt}}
-
-% \resumeSubHeading
-%     {Master's Thesis}
-%     {Georgia Tech College of Computing}
-%     {Atlanta, GA}
-%     {2023-01}
-%     {Present}
-% \begin{itemize}
-%     \item Modeling human discursive values through measures of language adoption in philosophy papers over time
-%     \item Training a GPT-based reward model on paper language adoption and fine-tuning generative model with RLHF
-% \end{itemize}
-
-% \resumeSubHeading
-%     {Founder \& Officer}
-%     {Effective Altruism at Georgia Tech}
-%     {Atlanta, GA}
-%     {2021-08}
-%     {2023-05}
+% \headingThree{Founder \& Executive Officer}{2021-08 to 2023-05}
 % \begin{itemize}
 %     \item Managed and led seminar programs on moral philosophy, global challenges, and philanthropy for over 120 students
-%     \item Secured grant funding, organized events, and led outreach to become one of the world's largest university chapters
+%     \item Handled finances, organized events, and led outreach to become one of the world's largest university chapters
+%     \item Center for Effective Altruism Grant | Secured \$15,000 in grants to support events and educational programs
 % \end{itemize}
 
-% \resumeSubHeading
-%     {Undergraduate Research}
-%     {Georgia Tech College of Computing}
-%     {Atlanta, GA}
-%     {2019-08}
-%     {2022-12}
-% \begin{itemize}
-%     \item Language Model Analysis:
-%         Conducted experiment to measure GPT-3's ability to rationalize moral judgements
-%     \item News Classification:
-%         Measured news story salience based on topic similarity across outlets using fine-tuned BERT
-%     \item Gentrification Forecasting:
-%         Built transformer model forecasting of Atlanta gentrification with tax data using PyTorch
-%     \item Employment Review:
-%         Wrote literature review on the likely effects of AI on wages and employment over this century
-%     % \item Portfolio Clustering:
-%     %     Analyzed investment portfolios to identify clusters of asset price time-series using K-means
-%     \item Social Media Review:
-%         Led literature review on how social media affects misinformation, polarization, and radicalization
-% \end{itemize}
 
+\headingOne{Research}
+
+
+\headingTwo{EleutherAI}{Remote}
+
+\headingThree{AI Alignment Projects}{2023-05 to Present}
+\begin{itemize}
+    \item Adversarial Robustness | Trained language model on reverse order data to identify potential jailbreak inputs
+    \item Unpaired Image Generation | Produced images from text with minimal paired training data using shared latent space
+\end{itemize}
+
+
+\headingTwo{Georgia Tech College of Computing}{Atlanta, GA}
+
+\headingThree{Graduate Projects}{2023-01 to 2023-08}
+\begin{itemize}
+    \item PhilBench | Developed value alignment benchmark for reward modeling methods using text corpora
+    \item Conference Presentation | Sherri L Conklin, Gaurav Sett (2023). AI Safety, Governance, and Alignment Tutorial. \textit{2023 IEEE International Symposium on Ethics in Engineering, Science, and Technology (ETHICS)}
+    \item Language Model Analysis | Measured the ability of GPT-3 to rationalize moral judgements in a chatbot setting
+    \item Co-Citation Prediction | Measured likelihood of paper co-citation using graph neural networks and BERT
+\end{itemize}
+
+\headingThree{Undergraduate Projects}{2019-08 to 2022-12}
+\begin{itemize}
+    \item Gentrification Forecasting | Built transformer model forecasting of Atlanta gentrification with tax data using PyTorch
+    \item Expert Models Review | Wrote literature review on potential development of chatbots with subject matter expertise
+    \item Portfolio Clustering | Analyzed investment portfolios to identify clusters of asset price time-series using K-means
+    \item Employment Review | Wrote literature review on the likely effects of AI on wages and employment over this century
+    \item Social Media Review | Conducted literature review on how social media amplifies misinformation in public discourse
+\end{itemize}
+
+
+
+\headingOne{Teaching}
+
+
+\headingTwo{Introduction to Cognitive Science}{Atlanta, GA}
+
+\headingThree{Graduate Teaching Assistant}{Spring 2023}
+
+\headingThree{Graduate Teaching Assistant}{Summer 2023}
+
+
+\headingOne{Skills}
+
+\headingList{Machine Learning}
+\begin{itemize*}[label=$|$]
+    \item Python
+    \item R
+    \item SQL
+    \item PyTorch
+    \item TensorFlow
+    \item HuggingFace
+    \item SciKit-Learn
+    \item Pandas
+    \item NumPy
+    \item Matplotlib
+\end{itemize*}
+
+\headingList{Software Engineering}
+\begin{itemize*}[label=$|$]
+    \item Java
+    \item C
+    \item JavaScript 
+    \item HTML/CSS 
+    \item Git
+    \item APIs
+    \item AWS
+    \item React
+    \item Django
+    \item Agile
+\end{itemize*}
 
 \end{document}
