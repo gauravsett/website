@@ -2,18 +2,16 @@
 title: About
 permalink: /index.html
 layout: default
-last_modified_at: 2023-08-17
+last_modified_at: 2023-09-26
 ---
 
 # About Me
 
 Hello! My name is Gaurav Sett. 
 
-Previously, I received a BS and MS in Computer Science from Georgia Tech. During my time in Atlanta, I co-founded the [AI Safety Initiative at Georgia Tech](https://aisi.dev){:target="_blank"}.
+I recently graduated with an MS in Computer Science from Georgia Tech. While in Atlanta, I founded the [AI Safety Initiative at Georgia Tech](https://aisi.dev){:target="_blank"}.
 
-Currently, I am managing the AI Safety Initiative, working on a few AI alignment projects, and organizing an intercollegiate AI safety research program.
-
-Soon, I aim to start a career in AI safety, policy, and strategy.
+I am now pursuing a career in AI governance to address emergent risks from advanced systems. I am interested in opportunities to apply my technical experience in support of policy, coordination, and strategy efforts.
 
 For more details, see my [resume](/assets/resume.pdf){:target="_blank"} or [LinkedIn](https://www.linkedin.com/in/gauravsett/){:target="_blank"}.
 
