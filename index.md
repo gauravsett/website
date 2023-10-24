@@ -2,7 +2,7 @@
 title: About
 permalink: /index.html
 layout: default
-last_modified_at: 2023-10-19
+last_modified_at: 2023-10-24
 ---
 
 # About Me
@@ -14,7 +14,7 @@ Currently, I am an AI policy researcher at RAND.
 Previously, I was a student at Georgia Tech.
 Learn more on [LinkedIn](https://www.linkedin.com/in/gauravsett/){:target="_blank"}.
 
-I live in the Bay Area.
+I live in Washington, DC.
 I enjoy learning about the mind, listening to music, walking in nature, and cooking plants. 
 
 Feel free to reach out at <u>gauravsett[at]icloud[dot]com</u>.
