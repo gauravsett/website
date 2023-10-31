@@ -13,39 +13,16 @@
   </head>
 
   <body>
-    <main>
+    <nav>
       {% assign blog = site.pages | where: "permalink", "/blog.html" | first %}
       {% assign about = site.pages | where: "permalink", "/index.html" | first %}
-      {% assign latest_date = about.last_modified_at %}
-      {% for page in site.pages %}
-        {% if latest_date < page.last_modified_at %}
-          {% assign latest_date = page.last_modified_at %}
-        {% endif %}
-      {% endfor %}
-      <section class="directory">
-        <div class="header">
-          <a href="/">Gaurav Sett</a>
-          <span>{{ latest_date }}</span>
-        </div>
-        <div class="row">
-          <img src="/assets/file.svg" alt="icon" />
-          <a href="/">{{ about.title }}</a>
-          <span>{{ about.last_modified_at }}</span>
-        </div>
-        <div class="row">
-          <img src="/assets/folder.svg" alt="icon" />
-          <a href="/blog">{{ blog.title }}</a>
-          <span>{{ blog.last_modified_at }}</span>
-        </div>
-      </section>
-
-      <section class="file">
-        <div class="header">
-          <a href={{ page.permalink }}>{{ page.title }}</a>
-          <span>{{ page.last_modified_at }}</span>
-        </div>
-        <div class="content">{{ content }}</div>
-      </section>
+      <b>Gaurav Sett</b>
+      <a href="/">{{ about.title }}</a>
+      <a href="/blog">{{ blog.title }}</a>
+    </nav>
+    <main>
+      <span>{{ page.last_modified_at }}</span>
+      <div class="content">{{ content }}</div>
     </main>
   </body>
 </html>

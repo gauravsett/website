@@ -17,112 +17,57 @@ body {
     color: var(--text);
 }
 
-main {
+main, nav {
     width: calc(100% - 60px);
-    max-width: 640px;
-    margin: 40px auto;
-    padding: 20px;
+    max-width: 600px;
+    margin: 60px auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    border: 1px solid var(--outline);
-    border-radius: 20px;
+    gap: 16px;
 }
 
-section {
-    background-color: var(--background);
-    border: 2px solid var(--outline);
-    border-radius: 10px;
-    overflow: hidden;
+nav b {
+    font-size: 16px;
 }
 
-section div {
-    padding: 16px;
-}
-
-div.header {
-    background-color: var(--highlight);
-}
-
-section div.header, section div.row {
-    display: flex;
-    flex-direction: row;
-}
-
-section div.row img {
-    width: 18px;
-    height: 18px;
-}
-
-section div.header a, section div.row a {
-    text-decoration: none;
-    color: var(--text);
-}
-
-section div.row a {
-    margin-left: 10px;
-}
-
-section div span {
-    align-content: flex-end;
-    margin-left: auto;
+a, span {
     color: var(--light);
 }
 
-section div.row, section div.content {
-    border-top: 2px solid var(--outline);
-}
 
-section div.header a {
-    font-weight: 600;
-    text-decoration: none;
-}
-
-section div.content {
-    padding: 32px;
-}
-
-section div.content h1, section div.content h2, section div.content h3 {
+h1, h2, h3 {
     font-weight: 600;
 }
 
-section div.content h1 {
+h1 {
     font-size: 24px;
     margin: 0 0 24px 0;
 }
 
-section div.content h2 {
+h2 {
     font-size: 20px;
     margin: 24px 0 16px 0;
 }
 
-section div.content h3 {
+h3 {
     font-size: 16px;
     margin: 20px 0 0 0;
 }
 
-section div.content p {
+p {
     font-size: 16px;
     margin: 16px 0 0 0;
     line-height: 1.4;
 }
 
-section div.content ul, section div.content ol {
+ul, ol {
     font-size: 16px;
     margin: 8px 0 4px 0;
     padding: 0 0 0 24px;
 }
 
-section div.content li {
+li {
     margin: 4px 0 0 0;
-}
-
-section div.content a {
-    color: var(--light);
-}
-
-a:hover {
-    text-decoration: underline !important;
 }
 
 /* Dark Mode */
