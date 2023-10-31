@@ -2,7 +2,7 @@
 title: About
 permalink: /index.html
 layout: default
-last_modified_at: 2023-10-19
+last_modified_at: 2023-10-24
 ---
 
 # About Me
