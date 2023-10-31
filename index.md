@@ -2,17 +2,17 @@
 title: About
 permalink: /index.html
 layout: default
-last_modified_at: 2023-10-24
+last_modified_at: 2023-10-31
 ---
 
 # About Me
 
 Hello! My name is Gaurav Sett. 
 
-I work AI governance.
+I work on AI governance.
 Currently, I am an AI policy researcher at RAND.
 Previously, I was a student at Georgia Tech.
-Learn more on [LinkedIn](https://www.linkedin.com/in/gauravsett/){:target="_blank"}.
+Learn more about my experience on [LinkedIn](https://www.linkedin.com/in/gauravsett/){:target="_blank"}.
 
 I like to learn about the mind, listen to music, walk in nature, and cook plants. 
 
