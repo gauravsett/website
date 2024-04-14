@@ -28,6 +28,7 @@ main, nav {
 
 nav b {
     font-size: 16px;
+    font-weight: 600;
 }
 
 a, span {
@@ -51,23 +52,23 @@ h2 {
 
 h3 {
     font-size: 16px;
-    margin: 20px 0 0 0;
+    margin: 16px 0 0 0;
 }
 
 p {
     font-size: 16px;
     margin: 16px 0 0 0;
-    line-height: 1.4;
+    /* line-height: 1.4; */
 }
 
 ul, ol {
     font-size: 16px;
-    margin: 8px 0 4px 0;
+    margin: 8px 0;
     padding: 0 0 0 24px;
 }
 
 li {
-    margin: 4px 0 0 0;
+    margin: 8px 0 0 0;
 }
 
 /* Dark Mode */
