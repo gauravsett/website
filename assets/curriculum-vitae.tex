@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{hyperref}
+\usepackage{lmodern}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -15,9 +16,10 @@
 \usepackage{indentfirst}
 \setlength\parindent{0pt}
 \usepackage{csquotes}
+\usepackage{setspace}
 \usepackage[inline]{enumitem}
 \pagestyle{empty}
-\setlist[itemize]{noitemsep,topsep=2pt,label={\tiny\raisebox{2pt}{\textbullet}}}
+\setlist[itemize]{noitemsep,topsep=2pt,label={\small\raisebox{1pt}{\textbullet}}}
 
 \newcommand{\headingOne}[1]{
     \subsection*{#1} \hrule
@@ -48,147 +50,147 @@
 \end{itemize*}
 
 
-
 \headingOne{Education}
 
 
-\headingTwo{Georgia Institute of Technology}{Atlanta, GA}
+\headingTwo{RAND}{Washington, DC}
+% \headingTwo{Pardee RAND Graduate School}{Washington, DC}
 
-\headingThree{Master of Science in Computer Science}{2023-01 to 2023-08}
+% \headingThree{PhD Candidate in Policy Analysis — Pardee RAND Graduate School}{2024-09 to Present}
+\headingThree{Incoming PhD Candidate in Policy Analysis — Pardee RAND Graduate School}{2024-09|}
 \begin{itemize}
-    \item Machine Learning specialization; 4.0 GPA
+    \item Technology and Security Policy Scholar.
+    % \item Comittee: 
 \end{itemize}
 
 
-\headingTwo{Georgia Institute of Technology}{Atlanta, GA}
+\headingTwo{Georgia Tech}{Atlanta, GA}
 
-\headingThree{Bachelor of Science in Computer Science}{2019-08 to 2022-12}
+\headingThree{MS in Computer Science — College of Computing}{2023-01|2023-08}
 \begin{itemize}
-    \item Artificial Intelligence and Human-Computer Interaction threads; 3.9 GPA, Honors Program
+    \item Machine Learning specialization; 4.0 GPA.
+\end{itemize}
+
+\headingThree{BS in Computer Science — College of Computing}{2019-08|2022-12}
+\begin{itemize}
+    \item Artificial Intelligence and Human-Computer Interaction threads; 3.9 GPA, Honors Program.
 \end{itemize}
 
 
 
-\headingOne{Work}
+\headingOne{Employment}
 
 
-\headingTwo{RAND Corporation}{Washington, DC}
+\headingTwo{RAND}{Washington, DC}
 
-\headingThree{Technology and Security Policy Fellow}{2023-11 to Present}
+% \headingThree{Assistant Policy Researcher}{2024-09 to Present}
+% \begin{itemize}
+% \end{itemize}
+
+\headingThree{Technology and Security Policy Fellow}{2023-11—}
 \begin{itemize}
-    \item Developing novel research agenda on affirmative cases for AI system safety for industry practices and government policy
-    \item Drafted ten policy recommendations for mitigating CBRN risks from AI systems to be sent to the President
-    \item Provided technical expertise on machine learning for perspective pieces and Senate policy briefs
-    \item Developed strategy for research focus, talent acquition, and external coordination for the center's new technical hub
-    \item Provided guidance on collecting information on the development practices of AI companies to Department of Commerce
-    \item Wrote feedback on corporate responsbility policies and suggested best practices for leading AI company
+    \item Conducting research on standards and regulation for AI systems.
+    \item Supporting requests from policymakers for technical expertise on AI governance.
 \end{itemize}
 
 
-\headingTwo{Center for AI Safety}{San Francisco, CA}
+% \headingTwo{Center for AI Safety}{San Francisco, CA}
 
-\headingThree{Fundraising Contractor}{2023-09 to 2023-10}
-\begin{itemize}
-    \item Conducted research on funding opportunities and developed strategy for donor engagement
-\end{itemize}
+% \headingThree{Fundraising Contractor}{2023-09 to 2023-10}
+% \begin{itemize}
+%     \item Conducted research on funding opportunities and developed strategy for donor engagement
+% \end{itemize}
 
 
 \headingTwo{Washington Post}{Washington, DC}
 
-\headingThree{Data Science Intern}{2022-05 to 2022-08}
+\headingThree{Data Science Intern}{2022-05|2022-08}
 \begin{itemize}
-    \item Categorized article topics in breaking news stream with LSTM and BERT models using PyTorch
-    \item Created API to handle continuous collection, processing, and storage of articles using AWS ECS, Lambda, and S3
-    \item Visualized breaking news topics and API performance on dashboard for journalists using Datadog
+    \item Deployed transformer language model to analyze breaking news for journalists and editors.
+    % \item Created API to handle continuous collection, processing, and storage of articles using AWS ECS, Lambda, and S3
+    % \item Visualized breaking news topics and API performance on dashboard for journalists using Datadog
 \end{itemize}
 
 
 \headingTwo{Federal Reserve Board}{Washington, DC}
 
-\headingThree{Economics Research Intern}{2021-05 to 2021-08}
+\headingThree{Economics Research Intern}{2021-05|2021-08}
 \begin{itemize}
-    \item Developed text analysis tool regularly used in policy meetings to analyze corporate earnings calls using SpaCy
-    \item Automated collection, processing, and storage of 200K documents; used parallelization to improve speed 8x with Dask
-    \item Presented to economists on NLP techniques such as word vectors and LDA topic modeling with interactive Django app
+    \item Built application regularly used by policymakers to analyze quarterly earnings calls.
+    % \item Automated collection, processing, and storage of 200K documents; used parallelization to improve speed 8x with Dask
+    % \item Presented to economists on NLP techniques such as word vectors and LDA topic modeling with interactive Django app
 \end{itemize}
 
 
 \headingTwo{Georgia Tech Research Institute}{Atlanta, GA}
 
-\headingThree{Undergraduate Research Intern}{2020-05 to 2020-12}
+\headingThree{Undergraduate Research Intern}{2020-05|2020-12}
 \begin{itemize}
-    \item Created classification models identifying conspiratorial anti-vax Reddit comments with 80\% accuracy using SciKit-Learn
-    \item Analyzed the partisan differences in tweets about COVID-19 topics from members of Congress using SpaCy
-    \item Built GUI application enabling social scientists to collect and analyze Twitter API data using PyQT5
+    \item Gathered data and analyzed political discourse about COVID-19 on social media platforms.
+    % \item Analyzed the partisan differences in tweets about COVID-19 topics from members of Congress using SpaCy
+    % \item Built GUI application enabling social scientists to collect and analyze Twitter API data using PyQT5
+\end{itemize}
+
+
+\headingOne{Research}
+
+\headingTwo{RAND}{}
+
+\headingThree{Publications}{}
+\begin{itemize}
+    \item Smith \& \textbf{Sett} (2024). Considerations for Dual-Use Foundation Models with Widely Available Weights. \textsl{RAND Expert Insights}.
+    \item Elmgren, \textbf{Sett}, \& Smith (2024). Considerations on AI Model Red-Teaming and Standards. \textsl{RAND Expert Insights}.
+\end{itemize}
+
+\headingThree{Presentations}{}
+\begin{itemize}
+    \item \textbf{Sett} (2024). Responsible Capability Scaling. \textsl{Frontier Model Evaluation Science Day}, Washington, District of Columbia.
+\end{itemize}
+
+\headingTwo{Georgia Tech}{}
+
+\headingThree{Publications}{}
+\begin{itemize}
+    \item Conklin, Bae, \textbf{Sett}, Hoffman, \& Biddle (2023). Report on the Conference on Ethicial and Responsible Design in the National AI Institute: A Summary of Challenges. \textsl{Forthcoming}.
+\end{itemize}
+
+\headingThree{Presentations}{}
+\begin{itemize}
+    \item Conklin \& \textbf{Sett} (2023). AI Safety, Governance, and Alignment Tutorial. \textsl{2023 IEEE International Symposium on Ethics in Engineering, Science, and Technology (ETHICS)}, West Lafayette, Indiana.
 \end{itemize}
 
 
 \headingOne{Leadership}
 
 
-\headingTwo{Supervised Program for Alignment Research}{Remote}
+\headingTwo{AI Safety Initiative at Georgia Tech}{}
 
-\headingThree{Founder \& Program Manager}{2023-07 to 2023-09}
+\headingThree{Founder, Executive Director}{2022-08|2023-10}
 \begin{itemize}
-    \item Launched program facilitating AI safety research projects for 15 advisors and 80 students at 12 universities
-    \item Recruited participants, managed applications, and organized 18 projects in alignment, engineering, and policy
+    \item Founded group hosting events, seminars, bootcamps, and research projects in AI alignment and governance.
+    \item Managed programs for over 100 students, leading team operations, and supporting career transitions.
+    % \item Open Philanthropy University Organizer Fellowship: Awarded \$7,100 grant to support work as group organizer
+    % \item Open Philanthropy Group Support Grant: Secured \$5,000 grant to support research and education programs
 \end{itemize}
 
 
-\headingTwo{AI Safety Initiative at Georgia Tech}{Atlanta, GA}
+\headingTwo{Supervised Program for Alignment Research}{}
 
-\headingThree{Founder \& Director}{2022-08 to 2023-10}
+\headingThree{Co-Founder, Program Manager}{2023-07|2023-09}
 \begin{itemize}
-    \item Founded group hosting events, seminars, bootcamps, and research projects in AI alignment and governance
-    \item Managed programs for dozens of students, leading team operations, and supporting career transitions
-    \item Open Philanthropy University Organizer Fellowship: Awarded \$7,100 grant to support work as group organizer
-    \item Open Philanthropy Group Support Grant: Secured \$5,000 grant to support research and education programs
+    \item Launched program facilitating AI safety research projects for 15 advisors and 80 students across universities.
+    \item Recruited participants, managed applications, and organized 18 projects in alignment, engineering, and policy.
 \end{itemize}
-
-
-% \headingTwo{Effective Altruism at Georgia Tech}{Atlanta, GA}
-
-% \headingThree{Founder \& Executive Officer}{2021-08 to 2023-05}
-% \begin{itemize}
-%     \item Managed and led seminar programs on moral philosophy, global challenges, and philanthropy for over 120 students
-%     \item Handled finances, organized events, and led outreach to become one of the world's largest university chapters
-%     \item Center for Effective Altruism Grant | Secured \$15,000 in grants to support events and educational programs
-% \end{itemize}
-
-
-\headingOne{Research}
-
-
-\headingTwo{Georgia Tech College of Computing}{Atlanta, GA}
-
-\headingThree{Graduate Projects}{2023-01 to 2023-08}
-\begin{itemize}
-    \item Forthcoming Paper: Conklin, Bae, Sett, Hoffman, \& Biddle (2023). Report on the Conference on Ethicial and Responsible Design in the National AI Institute: A Summary of Challenges. \textit{Forthcoming}.
-    \item Conference Presentation: Conklin \& Sett (2023). AI Safety, Governance, and Alignment Tutorial. \textit{2023 IEEE International Symposium on Ethics in Engineering, Science, and Technology (ETHICS)}.
-    \item PhilBench: Developed value alignment benchmark for reward modeling methods using text corpora
-    \item Language Model Analysis: Measured the ability of GPT-3 to rationalize moral judgements in a chatbot setting
-    \item Co-Citation Prediction: Measured likelihood of paper co-citation using graph neural networks and BERT
-\end{itemize}
-
-\headingThree{Undergraduate Projects}{2019-08 to 2022-12}
-\begin{itemize}
-    \item Gentrification Forecasting: Built transformer model forecasting of Atlanta gentrification with tax data using PyTorch
-    \item Expert Models Review: Wrote literature review on potential development of chatbots with subject matter expertise
-    \item Portfolio Clustering: Analyzed investment portfolios to identify clusters of asset price time-series using K-means
-    \item Employment Review: Wrote literature review on the likely effects of AI on wages and employment over this century
-    \item Social Media Review: Conducted literature review on how social media amplifies misinformation in public discourse
-\end{itemize}
-
 
 
 \headingOne{Teaching}
 
 
-\headingTwo{Introduction to Cognitive Science}{Atlanta, GA}
+\headingTwo{Georgia Tech}{}
 
-\headingThree{Graduate Teaching Assistant}{Spring 2023}
+\headingThree{Graduate Teaching Assistant — Introduction to Cognitive Science}{Spring 2023}
 
-\headingThree{Graduate Teaching Assistant}{Summer 2023}
+\headingThree{Graduate Teaching Assistant — Introduction to Cognitive Science}{Summer 2023}
 
 
 \headingOne{Skills}
