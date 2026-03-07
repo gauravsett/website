@@ -5,6 +5,10 @@
     --accent-dim: rgba(255, 230, 150, 0.25);
   }
 
+::selection {
+    background: var(--accent-dim);
+}
+
 #stars {
     position: fixed;
     top: 0;
