@@ -40,8 +40,10 @@
     var sc=document.getElementById('stars'),sx=sc.getContext('2d'),sd=[],mx=-1,my=-1;
     var starRgb=(function(){var v=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim(),m=v.match(/(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);return m?m[1]+','+m[2]+','+m[3]:'255,230,150'})();
     document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
-    function starsInit(){sc.width=window.innerWidth;sc.height=window.innerHeight;sd=[];var cols=Math.ceil(sc.width/40)+1,rows=Math.ceil(sc.height/40)+1;for(var r=0;r<rows;r++){var off=(r%2)*20;for(var c=0;c<cols;c++){sd.push({x:c*40+off,y:r*40,p:Math.random()*Math.PI*2,s:0.3+Math.random()*0.7})}}}
-    function starsAnim(t){sx.clearRect(0,0,sc.width,sc.height);var s=t/1000;for(var i=0;i<sd.length;i++){var d=sd[i],b=0.05+0.1*(0.5+0.5*Math.sin(s*d.s+d.p)),dx=d.x-mx,dy=d.y-my,dist=Math.sqrt(dx*dx+dy*dy),o=dist<150?b+(1-dist/150)*0.4:b;sx.fillStyle='rgba('+starRgb+','+o+')';sx.fillRect(d.x,d.y,2,2)}requestAnimationFrame(starsAnim)}
+    function _h(x,y){var n=Math.sin(x*127.1+y*311.7)*43758.5453;return n-Math.floor(n)}
+    function noise(x,y){var ix=Math.floor(x),iy=Math.floor(y),fx=x-ix,fy=y-iy;fx=fx*fx*(3-2*fx);fy=fy*fy*(3-2*fy);var a=_h(ix,iy),b=_h(ix+1,iy),c=_h(ix,iy+1),d=_h(ix+1,iy+1);return a+(b-a)*fx+(c-a)*fy+(a-b-c+d)*fx*fy}
+    function starsInit(){sc.width=window.innerWidth;sc.height=window.innerHeight;sd=[];var cols=Math.ceil(sc.width/40)+1,rows=Math.ceil(sc.height/40)+1;for(var r=0;r<rows;r++){var off=(r%2)*20;for(var c=0;c<cols;c++){sd.push({x:c*40+off,y:r*40})}}}
+    function starsAnim(t){sx.clearRect(0,0,sc.width,sc.height);var s=t/1000;for(var i=0;i<sd.length;i++){var d=sd[i],n=noise(d.x*0.005,d.y*0.005+s*0.3)*0.7+noise(d.x*0.01+s*0.2,d.y*0.01)*0.3,b=0.04+0.22*n,dx=d.x-mx,dy=d.y-my,dist=Math.sqrt(dx*dx+dy*dy),o=dist<150?b+(1-dist/150)*0.4:b;sx.fillStyle='rgba('+starRgb+','+o+')';sx.fillRect(d.x,d.y,2,2)}requestAnimationFrame(starsAnim)}
     starsInit();requestAnimationFrame(starsAnim);window.addEventListener('resize',starsInit);
     </script>
     <div class="banner"></div>

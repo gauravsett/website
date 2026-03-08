@@ -90,6 +90,10 @@ main span {
     color: var(--accent-dim);
 }
 
+main span::selection {
+    background: rgba(255, 230, 150, 0.24);
+}
+
 a {
     color: var(--primary);
 }
