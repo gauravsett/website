@@ -27,7 +27,7 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: 40px;
-    font-family: -apple-system-ui-serif, ui-serif, "Georgia", serif;
+    font-family: "IBM Plex Serif", -apple-system-ui-serif, ui-serif, "Georgia", serif;
     font-size: 14px;
     background-color: var(--background);
     color: var(--primary);
