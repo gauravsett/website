@@ -45,7 +45,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="shortcut icon" href="/assets/favicon.png" />
     <link rel="icon" sizes="16x16 32x32 64x64" href="/assets/favicon.png" />
@@ -81,28 +81,25 @@
 
   <body>
     <canvas id="stars" aria-hidden="true"></canvas>
-    <div class="banner"></div>
-    <header>
-        <img src="/assets/headshot.jpg" width="720" height="480" alt="Portrait of Gaurav Sett" fetchpriority="high" />
-        <span><a href="/">Gaurav Sett</a></span>
-        <nav>
-          {% assign blog = site.pages | where: "permalink", "/blog.html" | first %}
-          {% assign about = site.pages | where: "permalink", "/index.html" | first %}
-          <a href="/">{{ about.title }}</a>
-          <a href="{{ blog.url }}">{{ blog.title }}</a>
-        </nav>
-    </header>
-    <main id="main">
-      <span>{{ page.last_modified_at }}</span>
-      <div class="content">{{ content }}</div>
-    </main>
-    <div id="links">
-      <a href="https://twitter.com/gauravsett" target="_blank" rel="me noopener" data-hint="new tab"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" focusable="false"><path d="m264-192 30-120H144l18-72h150l42-168H192l18-72h162l36-144h72l-36 144h144l36-144h72l-36 144h156l-18 72H642l-42 168h168l-18 72H582l-30 120h-72l30-120H366l-30 120h-72Zm120-192h144l42-168H426l-42 168Z"/></svg>twitter.com/gauravsett</a>
-      <a href="https://linkedin.com/in/gauravsett" target="_blank" rel="me noopener" data-hint="new tab"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" focusable="false"><path d="M168-144q-29.7 0-50.85-21.15Q96-186.3 96-216v-432q0-29.7 21.15-50.85Q138.3-720 168-720h168v-72.21Q336-822 357.18-843q21.17-21 50.91-21h144.17Q582-864 603-842.85q21 21.15 21 50.85v72h168q29.7 0 50.85 21.15Q864-677.7 864-648v432q0 29.7-21.15 50.85Q821.7-144 792-144H168Zm0-72h624v-432H168v432Zm240-504h144v-72H408v72ZM168-216v-432 432Z"/></svg>linkedin.com/in/gauravsett</a>
-      <a href="mailto:gauravsett@gatech.edu" data-hint="copy" onclick="copyText('gauravsett@gatech.edu',this);return false"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" focusable="false"><path d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z"/></svg>gauravsett@gatech.edu</a>
+    <!-- <div class="banner"></div> -->
+    <div class="layout">
+      <header>
+          <img src="/assets/headshot.jpg" width="720" height="480" alt="Portrait of Gaurav Sett" fetchpriority="high" />
+          <span><a href="/">Gaurav Sett</a></span>
+          {%- comment -%} Icons are Phosphor (regular weight), inlined so the page pulls no icon font. {%- endcomment %}
+          <div id="links">
+            <a href="https://twitter.com/gauravsett" target="_blank" rel="me noopener" aria-label="Gaurav Sett on X" data-tooltip="Open link in a new tab"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"/></svg></a>
+            <a href="https://linkedin.com/in/gauravsett" target="_blank" rel="me noopener" aria-label="Gaurav Sett on LinkedIn" data-tooltip="Open link in a new tab"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></svg></a>
+            <a href="mailto:gauravsett@gatech.edu" aria-label="Email gauravsett@gatech.edu" data-tooltip="Copy email" onclick="copyText('gauravsett@gatech.edu',this);return false"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></svg></a>
+          </div>
+      </header>
+      <main id="main">
+        <span>{{ page.last_modified_at }}</span>
+        <div class="content">{{ content }}</div>
+      </main>
     </div>
     <script>
-    function copyText(text,el){var done=function(){el.dataset.hint='copied';setTimeout(function(){el.dataset.hint='copy'},1500)};if(navigator.clipboard){navigator.clipboard.writeText(text).then(done).catch(function(){fallbackCopy(text);done()})}else{fallbackCopy(text);done()}}
+    function copyText(text,el){var orig=el.dataset.tooltip;var done=function(){el.dataset.tooltip='Copied';setTimeout(function(){el.dataset.tooltip=orig},1500)};if(navigator.clipboard){navigator.clipboard.writeText(text).then(done).catch(function(){fallbackCopy(text);done()})}else{fallbackCopy(text);done()}}
     function fallbackCopy(text){var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta)}
     var sc=document.getElementById('stars'),sx=sc.getContext('2d'),sd=[],mx=-1,my=-1,lastW=0;
     var starRgb=(function(){var v=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim(),m=v.match(/(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);return m?m[1]+','+m[2]+','+m[3]:'255,230,150'})();
