@@ -9,13 +9,38 @@
     background: var(--accent-dim);
 }
 
-#stars {
+/* Background field: the Hoefler diaper-tile dot net, fixed behind the page.
+   Both layers share the same origin and the buti tile is exactly two net cells
+   wide, so every buti blooms inside one of the net's cells. Elements that must
+   sit on plain ground (main, the name, the link boxes) paint their own
+   background over it. The SVGs are solid gold; strength lives here as opacity. */
+body::before,
+body::after {
+    content: "";
     position: fixed;
     inset: 0;
-    width: 100%;
-    height: 100%;
     z-index: -1;
     pointer-events: none;
+    background-repeat: repeat;
+}
+
+body::before {
+    background-image: url("/assets/lattice.svg");
+    background-size: 32px 32px;
+    opacity: 0.05;
+}
+
+/* Scattered butis, revealed while any link is hovered or keyboard-focused.
+   One motif on each diagonal cell of a 2x2 block, hence the 64px tile. */
+body::after {
+    background-image: url("/assets/butis.svg");
+    background-size: 64px 64px;
+    opacity: 0.00;
+    transition: opacity 600ms ease;
+}
+
+body:has(a:hover, a:focus-visible)::after {
+    opacity: 0.03;
 }
 
 body {
@@ -89,7 +114,7 @@ main span::selection {
 a {
     color: var(--primary);
     text-decoration-color: rgba(from var(--accent) r g b / 0.5);
-    text-underline-offset: 3px;
+    text-underline-offset: 2px;
 }
 
 a:hover {
@@ -195,17 +220,19 @@ div#links svg {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    div#links a[data-tooltip]::after {
+    div#links a[data-tooltip]::after,
+    body::after {
         transition: none;
     }
 }
 
 /* Narrow screens stack header -> main in a single column. */
 .layout {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 40px;
-    margin-top: 80px;
 }
 
 /* Two columns once there's room for the 360px sidebar beside the 520px
@@ -215,6 +242,9 @@ div#links svg {
         display: grid;
         grid-template-columns: 360px 520px;
         justify-content: center;
+        /* One row, so align-content centres it in the grown box while
+           align-items keeps the two columns top-aligned with each other. */
+        align-content: center;
         align-items: start;
         column-gap: 40px;
     }
@@ -227,17 +257,30 @@ div#links svg {
     }
 }
 
-/* Banner Pattern */
+/* Banner: a single engraved vine with a hairline rail either side (Hoefler Text
+   Ornaments C D), one 80x60px tile. There are two .banner divs, first and last in
+   <body>; the top one is the same tile mirrored so the pair frames the page. The
+   div paints plain ground over the background field and the pattern sits on
+   ::before, so its strength is an opacity rather than a fill. */
 
 .banner {
+    position: relative;
     width: 100%;
-    height: 81px;
+    height: 60px;
     pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='81'%3E%3Cg transform='rotate(-90,40.5,40.5)'%3E%3Ctext x='0' y='15' font-family='IBM Plex Mono,monospace' font-size='15' textLength='81' lengthAdjust='spacingAndGlyphs' fill='rgba(255,230,153,0.1)'%3E%E2%95%91%E2%94%8A%E2%95%B2%C2%B7%E2%95%B3%C2%B7%E2%95%B1%E2%94%8A%E2%95%91%3C/text%3E%3Ctext x='0' y='35' font-family='IBM Plex Mono,monospace' font-size='15' textLength='81' lengthAdjust='spacingAndGlyphs' fill='rgba(255,230,153,0.1)'%3E%E2%95%91%E2%94%8A%E2%95%B1%C2%B7%E2%95%B3%C2%B7%E2%95%B2%E2%94%8A%E2%95%91%3C/text%3E%3C/g%3E%3C/svg%3E");
-    background-repeat: repeat;
     background-color: var(--background);
 }
 
-.banner:last-child {
-    margin-top: auto;
+.banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/banner.svg");
+    background-size: 80px 60px;
+    background-repeat: repeat;
+    opacity: 0.20;
+}
+
+.banner:first-child::before {
+    transform: scaleY(-1);
 }

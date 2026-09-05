@@ -10,3 +10,6 @@ _site
 vendor
 
 *.DS_Store
+
+# Python
+__pycache__/
