@@ -1,28 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.lang | default: 'en' }}">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {%- comment -%}
+      Home shows the bare name; every other page gets "Title | Name".
+      Canonical drops the "index.html" so "/" is the one indexed homepage URL.
+    {%- endcomment -%}
+    {%- assign is_home = false -%}
+    {%- if page.url == '/index.html' or page.url == '/' -%}{%- assign is_home = true -%}{%- endif -%}
+    {%- if is_home -%}
+      {%- assign page_title = site.title -%}
+    {%- else -%}
+      {%- assign page_title = page.title | append: ' | ' | append: site.title -%}
+    {%- endif -%}
+    {%- assign page_description = page.description | default: site.description | strip_newlines | strip -%}
+    {%- assign canonical_url = page.url | replace: 'index.html', '' | absolute_url -%}
+    {%- assign social_image = page.image | default: site.image | absolute_url %}
+
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page_description | escape }}" />
+    <meta name="author" content="{{ site.author }}" />
+    <link rel="canonical" href="{{ canonical_url }}" />
+    {%- if page.noindex %}
+    <meta name="robots" content="noindex, follow" />
+    {%- endif %}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:title" content="{{ page_title | escape }}" />
+    <meta property="og:description" content="{{ page_description | escape }}" />
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:image" content="{{ social_image }}" />
+    <meta property="og:image:width" content="{{ page.image_width | default: site.image_width }}" />
+    <meta property="og:image:height" content="{{ page.image_height | default: site.image_height }}" />
+    <meta property="og:image:alt" content="Portrait of {{ site.author }}" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@{{ site.twitter_username }}" />
+    <meta name="twitter:creator" content="@{{ site.twitter_username }}" />
+    <meta name="twitter:image:alt" content="Portrait of {{ site.author }}" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="shortcut icon" href="/assets/favicon.png" />
     <link rel="icon" sizes="16x16 32x32 64x64" href="/assets/favicon.png" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }} | Gaurav Sett</title>
+{%- if is_home %}
+
+    {%- comment -%} schema.org/Person - homepage only. Values come from `person` in _config.yml. {%- endcomment %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": {{ site.author | jsonify }},
+      "url": {{ '/' | absolute_url | jsonify }},
+      "image": {{ '/assets/headshot.jpg' | absolute_url | jsonify }},
+      "description": {{ page_description | jsonify }},
+      "jobTitle": [{% for t in site.person.job_title %}{{ t | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "affiliation": [{% for o in site.person.affiliations %}{"@type": "Organization", "name": {{ o.name | jsonify }}, "url": {{ o.url | jsonify }}}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "alumniOf": [{% for o in site.person.alumni_of %}{"@type": "CollegeOrUniversity", "name": {{ o.name | jsonify }}, "url": {{ o.url | jsonify }}}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "homeLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": {{ site.person.locality | jsonify }},
+          "addressRegion": {{ site.person.region | jsonify }},
+          "addressCountry": {{ site.person.country | jsonify }}
+        }
+      },
+      "knowsAbout": [{% for k in site.person.knows_about %}{{ k | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "sameAs": [{% for u in site.person.same_as %}{{ u | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}]
+    }
+    </script>
+{%- endif %}
   </head>
 
   <body>
-    <canvas id="stars"></canvas>
+    <canvas id="stars" aria-hidden="true"></canvas>
     <div class="banner"></div>
     <header>
-        <img src="/assets/headshot.png"/>
+        <img src="/assets/headshot.jpg" width="720" height="480" alt="Portrait of Gaurav Sett" fetchpriority="high" />
         <span><a href="/">Gaurav Sett</a></span>
         <nav>
           {% assign blog = site.pages | where: "permalink", "/blog.html" | first %}
           {% assign about = site.pages | where: "permalink", "/index.html" | first %}
           <a href="/">{{ about.title }}</a>
-          <a href="/blog">{{ blog.title }}</a>
+          <a href="{{ blog.url }}">{{ blog.title }}</a>
         </nav>
     </header>
     <main id="main">
@@ -30,21 +97,28 @@
       <div class="content">{{ content }}</div>
     </main>
     <div id="links">
-      <a href="https://twitter.com/gauravsett" target="_blank" data-hint="new tab"><svg viewBox="0 -960 960 960" fill="currentColor"><path d="m264-192 30-120H144l18-72h150l42-168H192l18-72h162l36-144h72l-36 144h144l36-144h72l-36 144h156l-18 72H642l-42 168h168l-18 72H582l-30 120h-72l30-120H366l-30 120h-72Zm120-192h144l42-168H426l-42 168Z"/></svg>twitter.com/gauravsett</a>
-      <a href="https://linkedin.com/in/gauravsett" target="_blank" data-hint="new tab"><svg viewBox="0 -960 960 960" fill="currentColor"><path d="M168-144q-29.7 0-50.85-21.15Q96-186.3 96-216v-432q0-29.7 21.15-50.85Q138.3-720 168-720h168v-72.21Q336-822 357.18-843q21.17-21 50.91-21h144.17Q582-864 603-842.85q21 21.15 21 50.85v72h168q29.7 0 50.85 21.15Q864-677.7 864-648v432q0 29.7-21.15 50.85Q821.7-144 792-144H168Zm0-72h624v-432H168v432Zm240-504h144v-72H408v72ZM168-216v-432 432Z"/></svg>linkedin.com/in/gauravsett</a>
-      <a href="#" data-hint="copy" onclick="copyText('gauravsett@gatech.edu',this);return false"><svg viewBox="0 -960 960 960" fill="currentColor"><path d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z"/></svg>gauravsett@gatech.edu</a>
+      <a href="https://twitter.com/gauravsett" target="_blank" rel="me noopener" data-hint="new tab"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" focusable="false"><path d="m264-192 30-120H144l18-72h150l42-168H192l18-72h162l36-144h72l-36 144h144l36-144h72l-36 144h156l-18 72H642l-42 168h168l-18 72H582l-30 120h-72l30-120H366l-30 120h-72Zm120-192h144l42-168H426l-42 168Z"/></svg>twitter.com/gauravsett</a>
+      <a href="https://linkedin.com/in/gauravsett" target="_blank" rel="me noopener" data-hint="new tab"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" focusable="false"><path d="M168-144q-29.7 0-50.85-21.15Q96-186.3 96-216v-432q0-29.7 21.15-50.85Q138.3-720 168-720h168v-72.21Q336-822 357.18-843q21.17-21 50.91-21h144.17Q582-864 603-842.85q21 21.15 21 50.85v72h168q29.7 0 50.85 21.15Q864-677.7 864-648v432q0 29.7-21.15 50.85Q821.7-144 792-144H168Zm0-72h624v-432H168v432Zm240-504h144v-72H408v72ZM168-216v-432 432Z"/></svg>linkedin.com/in/gauravsett</a>
+      <a href="mailto:gauravsett@gatech.edu" data-hint="copy" onclick="copyText('gauravsett@gatech.edu',this);return false"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" focusable="false"><path d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z"/></svg>gauravsett@gatech.edu</a>
     </div>
     <script>
     function copyText(text,el){var done=function(){el.dataset.hint='copied';setTimeout(function(){el.dataset.hint='copy'},1500)};if(navigator.clipboard){navigator.clipboard.writeText(text).then(done).catch(function(){fallbackCopy(text);done()})}else{fallbackCopy(text);done()}}
     function fallbackCopy(text){var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta)}
     var sc=document.getElementById('stars'),sx=sc.getContext('2d'),sd=[],mx=-1,my=-1,lastW=0;
     var starRgb=(function(){var v=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim(),m=v.match(/(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);return m?m[1]+','+m[2]+','+m[3]:'255,230,150'})();
+    var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)'),rafId=null;
     document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
     function _h(x,y){var n=Math.sin(x*127.1+y*311.7)*43758.5453;return n-Math.floor(n)}
     function noise(x,y){var ix=Math.floor(x),iy=Math.floor(y),fx=x-ix,fy=y-iy;fx=fx*fx*(3-2*fx);fy=fy*fy*(3-2*fy);var a=_h(ix,iy),b=_h(ix+1,iy),c=_h(ix,iy+1),d=_h(ix+1,iy+1);return a+(b-a)*fx+(c-a)*fy+(a-b-c+d)*fx*fy}
     function starsInit(){sc.width=sc.clientWidth;sc.height=sc.clientHeight;lastW=sc.clientWidth;sd=[];var cols=Math.ceil(sc.width/40)+1,rows=Math.ceil(sc.height/40)+1;for(var r=0;r<rows;r++){var off=(r%2)*20;for(var c=0;c<cols;c++){sd.push({x:c*40+off,y:r*40})}}}
-    function starsAnim(t){sx.clearRect(0,0,sc.width,sc.height);var s=t/1000;for(var i=0;i<sd.length;i++){var d=sd[i],n=noise(d.x*0.005,d.y*0.005+s*0.3)*0.7+noise(d.x*0.01+s*0.2,d.y*0.01)*0.3,b=0.04+0.22*n,dx=d.x-mx,dy=d.y-my,dist=Math.sqrt(dx*dx+dy*dy),o=dist<150?b+(1-dist/150)*0.4:b;sx.fillStyle='rgba('+starRgb+','+o+')';sx.fillRect(d.x,d.y,2,2)}requestAnimationFrame(starsAnim)}
-    starsInit();requestAnimationFrame(starsAnim);window.addEventListener('resize',function(){if(sc.clientWidth!==lastW)starsInit()});
+    function starsDraw(t){sx.clearRect(0,0,sc.width,sc.height);var s=t/1000;for(var i=0;i<sd.length;i++){var d=sd[i],n=noise(d.x*0.005,d.y*0.005+s*0.3)*0.7+noise(d.x*0.01+s*0.2,d.y*0.01)*0.3,b=0.04+0.22*n,dx=d.x-mx,dy=d.y-my,dist=Math.sqrt(dx*dx+dy*dy),o=dist<150?b+(1-dist/150)*0.4:b;sx.fillStyle='rgba('+starRgb+','+o+')';sx.fillRect(d.x,d.y,2,2)}}
+    function starsAnim(t){starsDraw(t);rafId=requestAnimationFrame(starsAnim)}
+    function starsStart(){if(rafId===null&&!document.hidden&&!reduceMotion.matches)rafId=requestAnimationFrame(starsAnim)}
+    function starsStop(){if(rafId!==null){cancelAnimationFrame(rafId);rafId=null}}
+    starsInit();if(reduceMotion.matches){starsDraw(0)}else{starsStart()}
+    window.addEventListener('resize',function(){if(sc.clientWidth!==lastW){starsInit();if(rafId===null)starsDraw(0)}});
+    document.addEventListener('visibilitychange',function(){document.hidden?starsStop():starsStart()});
+    reduceMotion.addEventListener('change',function(){if(reduceMotion.matches){starsStop();starsDraw(0)}else{starsStart()}});
     </script>
     <div class="banner"></div>
   </body>

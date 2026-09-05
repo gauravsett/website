@@ -20,10 +20,44 @@
 
 title: Gaurav Sett
 description: >- # this means to ignore newlines until "baseurl:"
-  The personal website of Gaurav Sett.
+  Gaurav Sett is a PhD student at the RAND School of Public Policy and a
+  non-resident fellow at IFP, working on artificial intelligence and American
+  national security.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://gauravsett.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: gauravsett
+twitter_username: gauravsett
+author: Gaurav Sett
+lang: en
+
+# Default social preview card, overridable per page with `image:`/`image_width:`/`image_height:`.
+# Keep the dimensions in sync with the file — platforms use them to lay the card out
+# before the image finishes loading.
+image: /assets/og-image.jpg
+image_width: 942
+image_height: 495
+
+# schema.org/Person structured data, rendered as JSON-LD on the homepage only.
+# Edit affiliations here rather than in the layout.
+person:
+  job_title:
+    - Researcher
+  locality: Washington
+  region: DC
+  country: US
+  affiliations:
+    - name: RAND
+      url: https://www.rand.org
+  alumni_of:
+    - name: Georgia Institute of Technology
+      url: https://www.gatech.edu
+  knows_about:
+    - Artificial intelligence
+    - National security
+  same_as:
+    - https://twitter.com/gauravsett
+    - https://linkedin.com/in/gauravsett
+    - https://www.rand.org/about/people/s/sett_gaurav.html
 
 # Build settings
 

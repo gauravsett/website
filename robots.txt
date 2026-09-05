@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gauravsett.com/sitemap.xml
+
+# I cooperate in the Prisoner's Dilemma.

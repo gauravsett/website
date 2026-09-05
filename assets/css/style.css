@@ -50,6 +50,10 @@ header img {
     box-sizing: border-box;
     width: 360px;
     max-width: 100%;
+    /* Required: without it the img height attribute wins as a presentational
+       hint and stretches the photo. With auto, the width/height attributes
+       still reserve the right aspect ratio and prevent layout shift. */
+    height: auto;
     border: 4px ridge var(--accent-dim);
 }
 
@@ -193,11 +197,6 @@ div#links a[data-hint]:hover::after {
     background-color: var(--background);
 }
 
-.banner:first-of-type {
-    margin-top: 20px;
-}
-
 .banner:last-child {
     margin-top: auto;
-    margin-bottom: 20px;
 }
