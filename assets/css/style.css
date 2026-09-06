@@ -248,12 +248,17 @@ div#links a[data-tooltip]:focus-visible::after {
     gap: 40px;
 }
 
-/* Two columns once there's room for the 360px sidebar beside the 520px
-   content column (360 + 40 gap + 520 = 920, plus margins). */
-@media (min-width: 960px) {
+/* Two columns once there's room for the narrowest sidebar beside the 520px
+   content column: 240 + 40 gap + 520 = 800, plus the 40px of padding below,
+   which is why the breakpoint is 840px. Between 840px and 960px the sidebar
+   slides between its 240px and 360px bounds; above 960px it rests at 360px. */
+@media (min-width: 840px) {
     .layout {
         display: grid;
-        grid-template-columns: 360px 520px;
+        grid-template-columns: minmax(240px, 360px) 520px;
+        /* Keeps the columns off the viewport edge, and makes the sidebar land on
+           exactly 240px at the breakpoint so the photo reaches a true square. */
+        padding: 0 20px;
         justify-content: center;
         /* One row, so align-content centres it in the grown box while
            align-items keeps the two columns top-aligned with each other. */
@@ -267,6 +272,16 @@ div#links a[data-tooltip]:focus-visible::after {
         width: 100%;
         max-width: none;
         margin: 0;
+    }
+
+    /* The photo fills the sidebar at a fixed height, so it crops from its native
+       3:2 toward a square as the column narrows. box-sizing is border-box and the
+       border is 4px, so 240px here leaves 232px of photo — exactly the width left
+       inside the 240px column at the breakpoint, which lands on a true square. */
+    header img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
     }
 }
 
