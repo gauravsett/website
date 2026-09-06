@@ -89,6 +89,7 @@ header img {
 header span a {
     font-size: 32px;
     color: var(--accent);
+    font-weight: 300;
 }
 
 header span a {
@@ -127,7 +128,7 @@ a:hover {
 
 
 h1, h2, h3 {
-    font-weight: 400;
+    font-weight: 300;
     color: var(--accent);
 }
 
