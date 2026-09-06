@@ -98,8 +98,13 @@
       </main>
     </div>
     <script>
-    function copyText(text,el){var orig=el.dataset.tooltip;var done=function(){el.dataset.tooltip='Copied to clipboard';setTimeout(function(){el.dataset.tooltip=orig},1500)};if(navigator.clipboard){navigator.clipboard.writeText(text).then(done).catch(function(){fallbackCopy(text);done()})}else{fallbackCopy(text);done()}}
+    /* Opens a link's tooltip for a moment, independently of hover. The label is
+       restored 200ms after it hides, so the text never changes mid-fade. */
+    function showTip(el,ms){clearTimeout(el._tip);el.classList.add('tip-open');el._tip=setTimeout(function(){el.classList.remove('tip-open')},ms)}
+    function copyText(text,el){var orig=el.dataset.tooltip;var done=function(){el.dataset.tooltip='Copied to clipboard';showTip(el,1500);setTimeout(function(){el.dataset.tooltip=orig},1700)};if(navigator.clipboard){navigator.clipboard.writeText(text).then(done).catch(function(){fallbackCopy(text);done()})}else{fallbackCopy(text);done()}}
     function fallbackCopy(text){var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta)}
+    /* A tap stands in for hover on touch and pen, where no hover state exists. */
+    document.querySelectorAll('#links a[data-tooltip]').forEach(function(el){el.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')showTip(el,1500)})});
     </script>
     <div class="banner"></div>
   </body>

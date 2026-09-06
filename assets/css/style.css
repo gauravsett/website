@@ -193,28 +193,36 @@ div#links svg {
     height: 20px;
 }
 
-/* Hover tooltip. Gated on hover-capable pointers: on touch there is no hover
-   state to reveal them, and three always-on labels would overlap. */
-@media (hover: hover) {
-    div#links a[data-tooltip]::after {
-        content: attr(data-tooltip);
-        position: absolute;
-        top: calc(100% + 8px);
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 6px 10px;
-        border: 1px dotted var(--accent-dim);
-        background-color: var(--background);
-        color: var(--accent);
-        font-size: 12px;
-        white-space: nowrap;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 120ms ease;
-    }
+/* Tooltip. The box exists on every pointer type; only the way it opens differs,
+   so exactly one label is ever visible and the three cannot overlap. */
+div#links a[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 10px;
+    border: 1px dotted var(--accent-dim);
+    background-color: var(--background);
+    color: var(--accent);
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 120ms ease;
+}
 
-    div#links a[data-tooltip]:hover::after,
-    div#links a[data-tooltip]:focus-visible::after {
+/* Touch has no hover, so the layout's script adds .tip-open on a tap and drops it
+   again shortly after. It also holds the label open to confirm an email copy. */
+div#links a[data-tooltip].tip-open::after,
+div#links a[data-tooltip]:focus-visible::after {
+    opacity: 1;
+}
+
+/* Hover stays gated on hover-capable pointers: on a touch screen it would latch
+   after a tap and leave the label stuck open. */
+@media (hover: hover) {
+    div#links a[data-tooltip]:hover::after {
         opacity: 1;
     }
 }
