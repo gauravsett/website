@@ -10,10 +10,15 @@
 }
 
 /* Background field: the Hoefler diaper-tile dot net, fixed behind the page.
-   Both layers share the same origin and the buti tile is exactly two net cells
-   wide, so every buti blooms inside one of the net's cells. Elements that must
-   sit on plain ground (main, the name, the link boxes) paint their own
-   background over it. The SVGs are solid gold; strength lives here as opacity. */
+   Elements that must sit on plain ground (main, the name, the link boxes) paint
+   their own background over it. The SVGs are solid gold; strength lives here as
+   opacity.
+
+   Both tiles are a 2x2 block of net cells and MUST share one background-size
+   (72px here, so 36px per cell). A browser rounds each layer's tile to whole
+   device pixels on its own, so two layers at different sizes round differently
+   at a fractional zoom and drift out of register across the page. Equal tiles
+   round alike and stay locked together. */
 body::before,
 body::after {
     content: "";
@@ -22,19 +27,18 @@ body::after {
     z-index: -1;
     pointer-events: none;
     background-repeat: repeat;
+    background-size: 72px 72px;
 }
 
 body::before {
     background-image: url("/assets/lattice.svg");
-    background-size: 32px 32px;
     opacity: 0.05;
 }
 
 /* Scattered butis, revealed while any link is hovered or keyboard-focused.
-   One motif on each diagonal cell of a 2x2 block, hence the 64px tile. */
+   One motif on each diagonal cell of the block, so half the net's cells bloom. */
 body::after {
     background-image: url("/assets/butis.svg");
-    background-size: 64px 64px;
     opacity: 0.00;
     transition: opacity 600ms ease;
 }

@@ -10,15 +10,20 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(HERE, "..", "assets")
 L = json.load(open(os.path.join(HERE, "glyphs", "lattice_layers.json")))
 
-# Background field: the shared dot net + centre square (orn.border.tile.1). One 2000-unit cell.
+# Background field: the shared dot net + centre square (orn.border.tile.1). The net repeats
+# every cell, but the tile is drawn as a 2x2 block so that it is the same size as the buti
+# tile below. That is not cosmetic: two background layers whose background-size differs each
+# round their tile to whole device pixels on their own, so at a fractional browser zoom the
+# two would round differently and drift apart across the page. Equal tiles round alike.
 # grid_svg draws wrapped copies so the corner dots that straddle cell edges tile without gaps.
-net, W, H = grid_svg([["orn.border.tile.1"]], fill=GOLD)
+T1 = "orn.border.tile.1"
+net, W, H = grid_svg([[T1, T1], [T1, T1]], fill=GOLD)
 open(os.path.join(ASSETS, "lattice.svg"), "w").write(net)
 
 # Hover layer: scattered butis. The same fleurons of orn.border.tile.4, no dots, but on
 # only two cells of a 2x2 block, so the motifs sit on a diagonal with a blank cell between.
 # Each buti still fills exactly one net cell, so it lands inside the lattice's cells as long
-# as this tile is drawn at twice the lattice's background-size. Wrapped copies cover the
+# as this tile is drawn at the same background-size as the lattice. Wrapped copies cover the
 # ~32 units the fleurons overshoot their cell, so the tile has no seam.
 BLOCK = 2 * CELL
 placements = [(0, 0), (CELL, CELL)]
